@@ -1,0 +1,46 @@
+5th Aug 2025
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+OCP Classroom: [Prod setup] certain projects / Organization
+
+User Details
+VMs and Servers:
+student / student
+root / redhat
+
+OCP Creds
+admin / redhatocp	(Like root user in linux)
+ developer / developer	(Normal User)
+
+kubeadmin / kubeadmin-password (Utility System, /home/lab/ocp4/auth) 
+kubeconfig
+kubeadmin-password	
+
+
+~~~~~~~~~~~~~Only for Lab~~~~~~~~~~~~~
+ssh root@utility from bastion system
+cd /home/lab/ocp4/auth
+scp -r kube* student@workstation:~
+exit
+student@workstation:
+cat kubeconfig | grep -i server
+cat kubeadmin-password
+oc login -u kuneadmin -p <enter the password you listed> <enter the API server you listed>
+
+oc get po
+oc get no
+oc new-project my-first-app
+of new-app quay.io/redhattraining/hello-world-nginx
+oc get po
+oc describe po <pod_name>
+oc get deploy
+oc expose <deployment>
+oc scale deploy <deployment> --replicas=3
+oc get po
+
+~~~~~~~~~~~~~Only for Lab~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
