@@ -19,14 +19,14 @@ kubeadmin-password
 
 
 ~~~~~~~~~~~~~Only for Lab~~~~~~~~~~~~~
-ssh root@utility from bastion system
+ssh root@utility          # run this from bastion system
 cd /home/lab/ocp4/auth
 scp -r kube* student@workstation:~
 exit
 student@workstation:
 cat kubeconfig | grep -i server
 cat kubeadmin-password
-oc login -u kuneadmin -p <enter the password you listed> <enter the API server you listed>
+oc login -u kubeadmin -p <enter the password you listed> <enter the API server you listed>
 
 oc get po
 oc get no
